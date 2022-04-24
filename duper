@@ -1,5 +1,6 @@
 //不生成临时变量，使两数交换
 #include<stdio.h>
+int main()
 {
   int a = 3 ;
   int b = 5 ;
