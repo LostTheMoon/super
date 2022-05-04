@@ -1,0 +1,22 @@
+//确定使用递归时 明白递归是给予一个条件让递归去接近这个条件并完成你的目的
+#include<stdio.h>
+#include<string.h>
+void reverse_string(char* arr)
+{
+	char nmb = arr[0];
+	int i = strlen(arr);
+	arr[0] = arr[i - 1];
+	arr[i - 1] = '\0';//字符串在遇到“\0”的时候会结束
+	if (strlen(arr+1) >= 2)//判断字符串是否需要进行交换
+	{
+		reverse_string(arr + 1);//把字符串首位字符和最后非“\0”字符去掉的新字符串进行递归
+	}
+	arr[i - 1] = nmb;//在递归的最后进行首位字符和最后非“\0”字符的调换
+}
+int main()
+{
+	char arr[] = "abcdefg";
+	reverse_string(arr);
+	printf("%s", arr);
+  return 0;
+}
