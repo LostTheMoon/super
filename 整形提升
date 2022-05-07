@@ -1,0 +1,8 @@
+int main()
+{
+	char a = -1;
+	signed b = -1;
+	unsigned char c = -1;
+	printf("%d,%d,%d", a, b, c);//-1,-1,255
+	return 0;//存在整形提升 补符号位
+}
